@@ -101,33 +101,19 @@ const ClientDashboard = () => {
                 )}
             </main>
 
-            <footer className="bg-slate-950 text-white mt-24 py-20 px-6">
-                <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-16">
+            {/* Footer Épuré */}
+            <footer className="bg-slate-950 text-slate-300 mt-24 py-16 px-6">
+                <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
                     <div>
-                        <h2 className="text-2xl font-bold text-blue-400 mb-6">TIGER CONSTRUCTION</h2>
-                        <div className="space-y-3 text-slate-400">
-                            <p>📍 Yaoundé, Cameroun</p>
-                            <p>📞 694 08 30 75 / 653 15 34 00</p>
-                            <p>📧 josephdjako2016@gmail.com</p>
-                        </div>
+                        <h2 className="text-2xl font-extrabold text-white">TIGER <span className="text-blue-500">CONSTRUCTION</span></h2>
                     </div>
-                    <div>
-                        <h3 className="text-lg font-bold mb-6 border-b border-white/10 pb-2">Nos Services</h3>
-                        <ul className="text-sm text-slate-300 space-y-3">
-                            {['Conception des plans', 'Dessin 2D/3D', 'Rendu vidéo', 'Calculs de structures', 'Réalisations', 'Suivi de chantiers', 'Rectifications', 'Conseils'].map((s, i) => (
-                                <li key={i} className="flex items-center gap-2">
-                                    <span className="w-1.5 h-1.5 rounded-full bg-blue-500"></span> {s}
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-                    <div>
-                        <h3 className="text-lg font-bold mb-6">Expertise</h3>
-                        <p className="text-slate-400 mb-8 leading-relaxed">Nous transformons vos idées en structures durables grâce à une expertise technique éprouvée.</p>
-                        <Link to="/contact" className="px-8 py-3 bg-blue-600 rounded-full font-bold hover:bg-blue-500 transition-colors">Discutons de votre projet</Link>
+                    <div className="text-sm space-y-2 text-center md:text-left">
+                        <p>📍 Yaoundé, Cameroun </p>
+                        <p>📍 📞 694 08 30 75 / 653 15 34 00</p>
+                        <p>📧 josephdjako2016@gmail.com</p>
                     </div>
                 </div>
-                <div className="max-w-6xl mx-auto mt-16 pt-8 border-t border-white/10 text-center text-slate-600 text-xs">
+                <div className="max-w-6xl mx-auto mt-12 pt-8 border-t border-slate-800 text-center text-slate-600 text-xs">
                     © {new Date().getFullYear()} TIGER CONSTRUCTION - Tous droits réservés.
                 </div>
             </footer>

@@ -1,7 +1,9 @@
 import axios from 'axios';
 
-// Configuration de base
-const BASE_URL = 'http://localhost:8090/api';
+// Configuration de base pour Vite
+// Dans Vite, on utilise import.meta.env pour les variables d'environnement
+// Rappel : vos variables doivent commencer par VITE_ (ex: VITE_API_URL)
+const BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:8090/api';
 
 // Instance pour les requêtes JSON standard
 const API = axios.create({
@@ -9,22 +11,20 @@ const API = axios.create({
     headers: {
         'Content-Type': 'application/json'
     },
-    withCredentials: true // INDISPENSABLE pour que le cookie de session soit envoyé
+    withCredentials: true
 });
 
 // Instance pour les requêtes avec Fichiers (Multipart)
 export const API_FILES = axios.create({
     baseURL: BASE_URL,
-    withCredentials: true // INDISPENSABLE également
-    // Note : Ne pas définir Content-Type ici, Axios le fait pour 'multipart/form-data'
+    withCredentials: true
 });
 
-// Intercepteur pour gérer les erreurs globales (ex: session expirée)
+// Intercepteur pour gérer les erreurs globales
 API.interceptors.response.use(
     (response) => response,
     (error) => {
         if (error.response && error.response.status === 401) {
-            // L'utilisateur n'est plus authentifié (session expirée)
             console.error("Session expirée, redirection vers le login...");
             window.location.href = '/login';
         }

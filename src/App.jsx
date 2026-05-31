@@ -1,15 +1,20 @@
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
+
+// Importations des pages
 import HomePage from './pages/HomePage';
+import ServicesPage from './pages/ServicesPage'; // Ajout de l'importation
+import ContactForm from './pages/client/ContactForm';
+import ClientDashboard from './pages/client/ClientDashboard';
+import AdminLogin from './features/admin/AdminLogin';
+
+// Importations des composants et features admin
 import CategorieManager from './features/categories/CategorieManager';
 import MessageManager from './features/admin/MessageManager';
 import { AdminServices } from './components/AdminServices';
 import ProjetManager from './features/admin/ProjetManager';
-import ContactForm from './pages/client/ContactForm';
-import ClientDashboard from './pages/client/ClientDashboard';
 import AdminLayout from './components/AdminLayout';
-import AdminLogin from './features/admin/AdminLogin';
 
 const md3Theme = createTheme({
     palette: {
@@ -42,6 +47,7 @@ function App() {
                 <Routes>
                     {/* Routes Publiques */}
                     <Route path="/" element={<HomePage />} />
+                    <Route path="/services" element={<ServicesPage />} /> {/* Ajout de la route */}
                     <Route path="/client" element={<ClientDashboard />} />
                     <Route path="/contact" element={<ContactForm />} />
 

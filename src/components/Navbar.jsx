@@ -33,6 +33,12 @@ const Navbar = () => {
                 <Link to="/" className={getLinkClass('/')}>
                     <span className="mr-2">🏠</span> Accueil
                 </Link>
+
+                {/* Nouveau lien Services ajouté ici */}
+                <Link to="/services" className={getLinkClass('/services')}>
+                    <span className="mr-2">🛠️</span> Services
+                </Link>
+
                 <Link to="/client" className={getLinkClass('/client')}>
                     <span className="mr-2">📊</span> Espace Client
                 </Link>

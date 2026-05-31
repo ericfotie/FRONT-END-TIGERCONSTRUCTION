@@ -1,43 +1,46 @@
 const Footer = () => {
     return (
-        <footer className="bg-slate-950 text-white py-12 px-6">
-            <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
+        <footer className="bg-[#1C1B1F] text-[#E6E1E5] pt-16 pb-8 px-6">
+            <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 border-b border-[#49454E] pb-12">
 
-                {/* Info Entreprise */}
-                <div>
-                    <h2 className="text-2xl font-bold text-blue-500 mb-4">TIGER CONSTRUCTION</h2>
-                    <p className="mb-2 font-medium">📍 { "Yaoundé, Cameroun" }</p>
-                    <p className="text-slate-400">📞 { "694 08 30 75 / 653 15 34 00" }</p>
-                    <p className="text-slate-400">📧 { "josephdjako2016@gmail.com" }</p>
-                    <p className="mt-4 font-bold text-blue-400">Dirigé par : Joseph Djako</p>
+                {/* Bloc Identité */}
+                <div className="flex flex-col gap-4">
+                    <h2 className="text-2xl font-bold tracking-tight text-white">
+                        TIGER <span className="text-[#D0BCFF]">CONSTRUCTION</span>
+                    </h2>
+                    <p className="text-[#CAC4D0] max-w-sm">
+                        L'excellence technique et la rigueur au service de vos projets de construction et d'ingénierie.
+                    </p>
                 </div>
 
-                {/* Nos Services */}
-                <div>
-                    <h3 className="text-xl font-bold mb-4 border-b border-slate-800 pb-2">Nos Services</h3>
-                    <ul className="text-sm text-slate-300 space-y-2">
-                        <li>1- Conception des plans</li>
-                        <li>2- Dessin 2D et 3D des plans</li>
-                        <li>3- Rendu vidéo externe et interne</li>
-                        <li>4- Calculs des structures</li>
-                        <li>5- Réalisations des structures</li>
-                        <li>6- Suivi des chantiers</li>
-                        <li>7- Rectification des structures échouées</li>
-                        <li>8- Conseils</li>
-                    </ul>
-                </div>
+                {/* Bloc Contact Professionnel */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+                    <div className="space-y-4">
+                        <h4 className="font-semibold text-white uppercase tracking-widest text-xs opacity-70">Contact</h4>
+                        <div className="space-y-3 text-sm">
+                            <p className="flex items-center gap-3 text-[#CAC4D0]">📍 Yaoundé, Cameroun</p>
+                            <a href="tel:+237694083075" className="flex items-center gap-3 text-[#CAC4D0] hover:text-[#D0BCFF] transition-colors">
+                                📞 694 08 30 75 / 653 15 34 00
+                            </a>
+                            <a href="mailto:josephdjako2016@gmail.com" className="flex items-center gap-3 text-[#CAC4D0] hover:text-[#D0BCFF] transition-colors">
+                                📧 josephdjako2016@gmail.com
+                            </a>
+                        </div>
+                    </div>
 
-                {/* Call to Action */}
-                <div className="flex flex-col justify-center items-center md:items-start">
-                    <h3 className="text-xl font-bold mb-4">Besoin d'expertise ?</h3>
-                    <p className="text-slate-400 mb-6">Nous accompagnons vos projets de la conception à la réalisation.</p>
-                    <a href="/contact" className="px-6 py-3 bg-blue-600 hover:bg-blue-700 rounded-xl font-bold transition">
-                        Nous contacter
-                    </a>
+                    <div className="space-y-4">
+                        <h4 className="font-semibold text-white uppercase tracking-widest text-xs opacity-70">Direction</h4>
+                        <p className="text-sm">
+                            <span className="block text-white font-medium">Joseph Djako</span>
+                            <span className="text-[#CAC4D0]">Directeur Général</span>
+                        </p>
+                    </div>
                 </div>
             </div>
-            <div className="text-center mt-12 text-slate-600 text-xs border-t border-slate-800 pt-6">
-                © {new Date().getFullYear()} TIGER CONSTRUCTION - Tous droits réservés.
+
+            {/* Copyright */}
+            <div className="max-w-7xl mx-auto pt-8 text-center text-[#938F99] text-xs">
+                © {new Date().getFullYear()} TIGER CONSTRUCTION. Tous droits réservés.
             </div>
         </footer>
     );
